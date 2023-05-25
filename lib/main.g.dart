@@ -1,3 +1,4 @@
+import 'package:app/src/ui/home/view.dart';
 import 'package:flutter/material.dart';
 import 'color_schemes.g.dart';
 
@@ -15,13 +16,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
       darkTheme: ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
-      home: const Home(),
+      home: const App(),
     );
   }
 }
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class App extends StatelessWidget {
+  const App({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -29,18 +30,9 @@ class Home extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           elevation: 2,
-          title: Text("Material Theme Builder"),
+          title: const Text("List of articles!"),
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
-                'Update with your UI',
-              ),
-            ],
-          ),
-        ),
+        body: Home(),
         floatingActionButton:
             FloatingActionButton(onPressed: () => {}, tooltip: 'Increment'));
   }
