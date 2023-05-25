@@ -22,6 +22,13 @@ class _HomeState extends State<Home> {
     });
   }
 
+  void refresh() {
+    setState(() {
+      articles = [];
+    });
+    getArticles();
+  }
+
   void getArticles() async {
     var getArticles = await ArticlesRepository().getData();
     setState(() {
@@ -37,10 +44,10 @@ class _HomeState extends State<Home> {
     return SizedBox(
       child: articles.isNotEmpty
           ? articleSelected == -1
-              ? ShowArticles(articles, selectArticle)
+              ? ShowArticles(articles, selectArticle, refresh)
               : ZoomArticle(articles[articleSelected].title,
                   articles[articleSelected].description, selectArticle)
-          : const Center(child: Text("Loading...")),
+          : const Center(child: CircularProgressIndicator()),
     );
   }
 }
