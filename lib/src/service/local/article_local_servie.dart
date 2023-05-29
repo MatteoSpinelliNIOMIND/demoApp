@@ -33,12 +33,6 @@ class ArticleLocalService extends ArticleService {
             description: 'Description 4',
             title: 'Title 4',
           ),
-          Article(
-            articleId: '5',
-            date: 5,
-            description: 'Description 5',
-            title: 'Title 5',
-          ),
         ];
       },
     );
