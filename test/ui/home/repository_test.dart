@@ -46,7 +46,6 @@ void main() {
       );
 
       final result = await homeRepository.getListData();
-      print({"result.length": result.length});
       expect(result.length, 4);
     },
   );
